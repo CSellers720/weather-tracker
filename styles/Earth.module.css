@@ -38,7 +38,7 @@
   height: 400px;
   animation: spin 150s linear normal infinite;
   background: url('../public/clouds.png');
-  opacity: .6;
+  opacity: .5;
   background-repeat: repeat-x;
 }
 @keyframes spin {
