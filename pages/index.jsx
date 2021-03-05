@@ -1,21 +1,15 @@
-import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import MyNavbar from './components/MyNavbar';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Earth from './components/Earth';
 
 export default function Home() {
   return (
     <div className={styles.container}>
-      <Head>
-        <title>Weather Tracking Service</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
-      </Head>
-
-      <MyNavbar />
       <main>
-        {/* Fill in the home page here */}
+        <div className={styles.earthBlurb}>
+          <h2> Welcome to the Weather Tracker! </h2>
+          <p>Select an option above to continue.</p>
+        </div>
+        <Earth />
       </main>
     </div>
   );
