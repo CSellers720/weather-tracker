@@ -6,7 +6,7 @@ const MyNavbar = () => (
   <>
     <Navbar
       variant="dark"
-      bg="dark"
+      bg="black"
       className={styles.navbar}
       fixed="top"
     >
