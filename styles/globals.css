@@ -19,6 +19,18 @@ a {
   box-sizing: border-box;
 }
 
-.bg-black {
+.bg-darkblue {
   background-color: rgb(30, 32, 48);
+}
+
+.btn-track {
+  margin-left: 15px;
+  background-color: rgb(60, 64, 92);
+  color: white;
+  font-weight: 600;
+}
+
+.btn-track:hover {
+  background-color: rgb(65, 76, 158);
+  color: white;
 }
