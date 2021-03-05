@@ -18,10 +18,10 @@ const MyNavbar = () => (
           <Nav.Link href="/">Home</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link href="">Table View</Nav.Link>
+          <Nav.Link href="/tableview">Table View</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link href="">Chart View</Nav.Link>
+          <Nav.Link href="/chartview">Chart View</Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <Nav.Link href="">Track</Nav.Link>
