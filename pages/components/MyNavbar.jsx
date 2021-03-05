@@ -1,4 +1,5 @@
 import Navbar from 'react-bootstrap/Navbar';
+import Button from 'react-bootstrap/Button';
 import Nav from 'react-bootstrap/Nav';
 import styles from '../../styles/Navbar.module.css';
 
@@ -6,7 +7,7 @@ const MyNavbar = () => (
   <>
     <Navbar
       variant="dark"
-      bg="black"
+      bg="darkblue"
       className={styles.navbar}
       fixed="top"
     >
@@ -23,10 +24,8 @@ const MyNavbar = () => (
         <Nav.Item>
           <Nav.Link href="/chartview">Chart View</Nav.Link>
         </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="">Track</Nav.Link>
-        </Nav.Item>
       </Nav>
+      <Button variant="track">Track</Button>
     </Navbar>
   </>
 );
