@@ -34,3 +34,13 @@ a {
   background-color: rgb(65, 76, 158);
   color: white;
 }
+
+.btn-form {
+  background-color:  rgb(65, 76, 158);
+  color: white;
+}
+
+.btn-form:hover {
+  background-color: rgb(83, 97, 199);
+  color: white;
+}
