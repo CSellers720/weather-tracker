@@ -14,7 +14,7 @@ const MyModal = ({ show, onHide }) => (
       <Modal.Title>Track Local Weather</Modal.Title>
     </Modal.Header>
     <Modal.Body>
-      <MyForm />
+      <MyForm hideModal={onHide} />
     </Modal.Body>
   </Modal>
 );
