@@ -3,7 +3,6 @@ import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Nav from 'react-bootstrap/Nav';
 import MyModal from './MyModal';
-import styles from '../../styles/Navbar.module.css';
 
 const MyNavbar = () => {
   const [show, setShow] = useState(false);
@@ -15,7 +14,6 @@ const MyNavbar = () => {
       <Navbar
         variant="dark"
         bg="darkblue"
-        className={styles.navbar}
         fixed="top"
       >
         <Navbar.Brand href="/">
