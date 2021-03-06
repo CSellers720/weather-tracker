@@ -11,38 +11,47 @@
   overflow: hidden;
   border-radius: 50%;
   box-shadow: 0 0 20px 20px #000 inset, 0 0 20px 2px #000;
-  z-index: 0;
 }
 
-.earth:after {
-  position: relative;
-  content: "";
+.shadow {
+  width: 400px;
+  height: 400px;
+  position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  box-shadow: -20px -20px 50px 2px #000 inset;
+  margin: auto;
   border-radius: 50%;
+  box-shadow: -20px -20px 50px 10px #000 inset, 0 0 20px 2px #000;
 }
 
 .earth > .earthDiv {
-  width: 2000px;
+  position: absolute;
+  width: 3000px;
   height: 400px;
-  animation: spin 150s linear normal infinite;
+  animation: spinEarth 70s linear normal infinite;
   background: url('../public/earth.jpeg');
   background-repeat: repeat-x;
 }
 
-.earthDiv > .cloudDiv {
-  width: 3200px;
+.earth > .cloudDiv {
+  width: 2400px;
   height: 400px;
-  animation: spin 150s linear normal infinite;
+  animation: spinClouds 80s linear normal infinite;
   background: url('../public/clouds.png');
-  opacity: .5;
   background-repeat: repeat-x;
+  opacity: .5;
 }
-@keyframes spin {
+
+@keyframes spinEarth {
   to {
-    transform: translateX(-50%);
+    transform: translateX(-1000px);
+  }
+}
+
+@keyframes spinClouds {
+  to {
+    transform: translateX(-800px);
   }
 }
