@@ -2,7 +2,6 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 import { useState } from 'react';
-import styles from '../../styles/Form.module.css';
 
 const MyForm = ({ hideModal, showLocAlert, setAddress }) => {
   const [street, setStreet] = useState('');
@@ -67,7 +66,7 @@ const MyForm = ({ hideModal, showLocAlert, setAddress }) => {
       <Button variant="form" type="submit">
         Submit
       </Button>
-      <Button variant="form" type="cancel" onClick={hideModal} className={styles.cancel}>
+      <Button variant="cancel" type="cancel" onClick={hideModal}>
         Cancel
       </Button>
     </Form>
