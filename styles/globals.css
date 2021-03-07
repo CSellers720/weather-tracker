@@ -40,7 +40,14 @@ a {
   color: white;
 }
 
-.btn-form:hover {
+.btn-cancel {
+  margin-left: 20px;
+  background-color:  rgb(42, 50, 104);
+  color: white;
+}
+
+.btn-form:hover,
+.btn-cancel:hover {
   background-color: rgb(83, 97, 199);
   color: white;
 }
