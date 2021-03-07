@@ -9,4 +9,5 @@ module.exports = {
   PASSWORD: FILL_ME_IN,
   CLUSTER_NAME: FILL_ME_IN,
   API_KEY: FILL_ME_IN,
+  GOOGLE_API_KEY: FILL_ME_IN,
 };
