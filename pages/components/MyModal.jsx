@@ -2,7 +2,9 @@ import Modal from 'react-bootstrap/Modal';
 import MyForm from './MyForm';
 import styles from '../../styles/Modal.module.css';
 
-const MyModal = ({ show, onHide }) => (
+const MyModal = ({
+  show, onHide, showLocAlert, locAlert, setAddress
+}) => (
   <Modal
     className={styles.custom_modal}
     show={show}
@@ -14,7 +16,12 @@ const MyModal = ({ show, onHide }) => (
       <Modal.Title>Track Local Weather</Modal.Title>
     </Modal.Header>
     <Modal.Body>
-      <MyForm hideModal={onHide} />
+      <MyForm
+        hideModal={onHide}
+        showLocAlert={showLocAlert}
+        locAlert={locAlert}
+        setAddress={setAddress}
+      />
     </Modal.Body>
   </Modal>
 );

@@ -1,25 +1,43 @@
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import axios from 'axios';
 import { useState } from 'react';
 import styles from '../../styles/Form.module.css';
 
-const MyForm = ({ hideModal }) => {
+const MyForm = ({ hideModal, showLocAlert, setAddress }) => {
+  const [street, setStreet] = useState('');
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
   const [country, setCountry] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(`${city}, ${state}, ${country}`);
+    await axios.post('/api/geocoding', {
+      street, city, state, country,
+    })
+      .then((results) => {
+        setAddress(results.data.data.formatted_address);
+        showLocAlert();
+      });
     hideModal();
   };
 
   return (
     <Form onSubmit={(e) => handleSubmit(e)}>
+      <Form.Group controlId="formStreet">
+        <Form.Label>
+          Street Address
+        </Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Enter your street address"
+          onChange={(e) => setStreet(e.target.value)}
+          required
+        />
+      </Form.Group>
       <Form.Group controlId="formCity">
         <Form.Label>
           City Name
-          <span className={styles.asterisk}>required</span>
         </Form.Label>
         <Form.Control
           type="text"
@@ -29,23 +47,28 @@ const MyForm = ({ hideModal }) => {
         />
       </Form.Group>
       <Form.Group controlId="formState">
-        <Form.Label>State Code</Form.Label>
+        <Form.Label>State or Region</Form.Label>
         <Form.Control
           type="text"
-          placeholder="Enter 2 character state code"
+          placeholder="Enter state or region name"
           onChange={(e) => setState(e.target.value)}
+          required
         />
       </Form.Group>
       <Form.Group controlId="formCountry">
         <Form.Label>Country Code</Form.Label>
         <Form.Control
           type="text"
-          placeholder="Enter 2 character country code"
+          placeholder="Enter country code"
           onChange={(e) => setCountry(e.target.value)}
+          required
         />
       </Form.Group>
       <Button variant="form" type="submit">
         Submit
+      </Button>
+      <Button variant="form" type="cancel" onClick={hideModal} className={styles.cancel}>
+        Cancel
       </Button>
     </Form>
   );

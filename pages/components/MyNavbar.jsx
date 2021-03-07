@@ -3,11 +3,16 @@ import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Nav from 'react-bootstrap/Nav';
 import MyModal from './MyModal';
+import LocAlert from './LocAlert';
 
 const MyNavbar = () => {
   const [show, setShow] = useState(false);
   const showModal = () => setShow(true);
   const hideModal = () => setShow(false);
+  const [locAlert, setLocAlert] = useState(false);
+  const showLocAlert = () => setLocAlert(true);
+  const hideLocAlert = () => setLocAlert(false);
+  const [address, setAddress] = useState('');
 
   return (
     <>
@@ -32,7 +37,17 @@ const MyNavbar = () => {
         </Nav>
         <Button variant="track" onClick={showModal}>Track</Button>
       </Navbar>
-      <MyModal show={show} onHide={hideModal} />
+      <MyModal
+        show={show}
+        onHide={hideModal}
+        showLocAlert={showLocAlert}
+        setAddress={setAddress}
+      />
+      <LocAlert
+        show={locAlert}
+        onHide={hideLocAlert}
+        address={address}
+      />
     </>
   );
 };
