@@ -16,17 +16,17 @@ export default function Home() {
       </main>
       <div className={styles.readme}>
         <h1>Getting started</h1>
-        <p>
+        <div className={styles.info}>
           This website was designed to fetch weather data for a given area.
           To get started:
           <br />
-          <ul>
+          <ul className={styles.instructions}>
             <li>Click on the "Track" button in the nav bar.</li>
             <li>Put your location information into the form that appears.</li>
             <li>Weather data for the given location will be fetched and stored.</li>
             <li>After being saved, the data can be viewed in either table or chart format.</li>
           </ul>
-        </p>
+        </div>
       </div>
     </div>
   );
