@@ -12,7 +12,8 @@ const MyNavbar = () => {
   const [locAlert, setLocAlert] = useState(false);
   const showLocAlert = () => setLocAlert(true);
   const hideLocAlert = () => setLocAlert(false);
-  const [address, setAddress] = useState('');
+  const [address, setAddress] = useState({});
+  const [coords, setCoords] = useState({ lon: null, lat: null });
 
   return (
     <>
@@ -42,11 +43,13 @@ const MyNavbar = () => {
         onHide={hideModal}
         showLocAlert={showLocAlert}
         setAddress={setAddress}
+        setCoords={setCoords}
       />
       <LocAlert
         show={locAlert}
         onHide={hideLocAlert}
         address={address}
+        coords={coords}
       />
     </>
   );

@@ -3,7 +3,7 @@ import MyForm from './MyForm';
 import styles from '../../styles/Modal.module.css';
 
 const MyModal = ({
-  show, onHide, showLocAlert, locAlert, setAddress
+  show, onHide, showLocAlert, locAlert, setAddress, setCoords,
 }) => (
   <Modal
     className={styles.custom_modal}
@@ -21,6 +21,7 @@ const MyModal = ({
         showLocAlert={showLocAlert}
         locAlert={locAlert}
         setAddress={setAddress}
+        setCoords={setCoords}
       />
     </Modal.Body>
   </Modal>
