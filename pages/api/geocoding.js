@@ -12,10 +12,14 @@ export default async (req, res) => {
   if (req.method === 'POST') {
     await axios.get(`${prefix}?address=${locationString}&key=${GOOGLE_API_KEY}`)
       .then((data) => {
+        if (data.data.results.length === 0) {
+          // eslint-disable-next-line no-throw-literal
+          throw 'No results found';
+        }
         res.status(200).json({ data: data.data.results[0] });
       })
-      .catch(() => {
-        res.status(404).json({ data: 'Location not found' });
+      .catch((err) => {
+        res.status(404).json({ data: 'Location not found', err });
       });
   } else {
     await res.status(400);
