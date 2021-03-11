@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
 const trackSchema = new Schema({
-  time: String,
+  time: Number,
   main: {
     current: Number,
     feelsLike: Number,
@@ -26,6 +26,10 @@ const trackSchema = new Schema({
     city: String,
     state: String,
     country: String,
+  },
+  coord: {
+    lat: Number,
+    lon: Number,
   },
 });
 
