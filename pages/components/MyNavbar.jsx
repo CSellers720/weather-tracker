@@ -49,6 +49,7 @@ const MyNavbar = () => {
         show={locAlert}
         onHide={hideLocAlert}
         address={address}
+        setAddress={setAddress}
         coords={coords}
       />
     </>
