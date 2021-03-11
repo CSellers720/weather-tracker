@@ -1,6 +1,7 @@
 /* eslint-disable no-alert */
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 import styles from '../../styles/Modal.module.css';
 
@@ -9,11 +10,10 @@ const LocAlert = ({
 }) => {
   const { city, state, country } = address;
 
-  const onConfirm = () => {
-    axios.post('/api/fetch-data', { city, state, country })
-      .then((results) => {
-        window.alert('Now tracking location!\n\n', results);
-        onHide();
+  const onConfirm = async () => {
+    await axios.post('/api/fetch-data', { city, state, country })
+      .then(() => {
+        window.location.href = '/tableview';
       });
   };
 
@@ -47,7 +47,7 @@ const LocAlert = ({
         </h3>
         <br />
         <br />
-        <Button variant="form" onClick={(e) => onConfirm(e)}>Confirm</Button>
+        <Button type="submit" variant="form" onClick={onConfirm}>Confirm</Button>
         <Button
           variant="cancel"
           onClick={onHide}
