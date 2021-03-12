@@ -47,9 +47,16 @@ a {
 }
 
 .btn-form:hover,
-.btn-cancel:hover {
+.btn-cancel:hover,
+.btn-table:hover {
   background-color: rgb(83, 97, 199);
   color: white;
+}
+
+.btn-table {
+  color:lightgray;
+  background-color:  rgb(42, 50, 104);
+  margin: 5px;
 }
 
 .table-weather {
