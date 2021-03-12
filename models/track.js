@@ -31,6 +31,7 @@ const trackSchema = new Schema({
     lat: Number,
     lon: Number,
   },
+  hourly: [Schema.Types.Mixed],
 });
 
 export default mongoose.models.Track || mongoose.model('Track', trackSchema);
