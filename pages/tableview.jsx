@@ -2,9 +2,9 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table';
-import Blurb from './components/tableview/Blurb';
-import Headers from './components/tableview/Headers';
-import Row from './components/tableview/Row';
+import Blurb from '../components/tableview/Blurb';
+import Headers from '../components/tableview/Headers';
+import Row from '../components/tableview/Row';
 import styles from '../styles/TableView.module.css';
 
 const TableView = () => {

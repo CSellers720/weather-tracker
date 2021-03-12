@@ -39,9 +39,9 @@ const ChartView = () => {
           });
         });
         setChartData(formattedChartData);
-        console.log(formattedChartData);
       })
       .catch((err) => {
+        // eslint-disable-next-line no-console
         console.error('Chart view unable to access database', err);
       });
   }, []);

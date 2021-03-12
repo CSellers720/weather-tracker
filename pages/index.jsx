@@ -1,5 +1,5 @@
 import styles from '../styles/Home.module.css';
-import Earth from './components/Earth';
+import Earth from '../components/Earth';
 
 export default function Home() {
   return (
@@ -21,7 +21,7 @@ export default function Home() {
           To get started:
           <br />
           <ul className={styles.instructions}>
-            <li>Click on the "Track" button in the nav bar.</li>
+            <li>Click on the &quot;Track&quot; button in the nav bar.</li>
             <li>Put your location information into the form that appears.</li>
             <li>Weather data for the given location will be fetched and stored.</li>
             <li>After being saved, the data can be viewed in either table or chart format.</li>
