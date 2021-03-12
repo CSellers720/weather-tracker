@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 import axios from 'axios';
-import { API_KEY } from '../../config';
 import connectDB from '../../middleware/mongodb';
 import genTrack from '../../helpers/genTrack';
 import upsertLocation from '../../helpers/upsertLocation';
@@ -11,7 +10,7 @@ const handler = (req, res) => {
   if (req.method === 'POST') {
     const { city, state, country } = req.body;
     const locationString = `${city},${state},${country}`;
-    axios.get(`${prefix}?q=${locationString}&units=metric&appid=${API_KEY}`)
+    axios.get(`${prefix}?q=${locationString}&units=metric&appid=${process.env.API_KEY}`)
       .then(async (results) => {
         const { data } = results;
         data.location = { city, state, country };

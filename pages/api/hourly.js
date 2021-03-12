@@ -1,6 +1,5 @@
 import axios from 'axios';
 import mongoose from 'mongoose';
-import { API_KEY } from '../../config';
 import connectDB from '../../middleware/mongodb';
 import Track from '../../models/track';
 
@@ -10,7 +9,7 @@ const handler = async (req, res) => {
   const { id, coord } = req.body;
   const { lat, lon } = coord;
   const dt = Math.floor(Date.now() / 1000) - 300;
-  const queryString = `${hourlyPrefix}?units=metric&lat=${lat}&lon=${lon}&dt=${dt}&appid=${API_KEY}`;
+  const queryString = `${hourlyPrefix}?units=metric&lat=${lat}&lon=${lon}&dt=${dt}&appid=${process.env.API_KEY}`;
   await axios.get(queryString)
     .then(({ data }) => {
       const { hourly } = data;
