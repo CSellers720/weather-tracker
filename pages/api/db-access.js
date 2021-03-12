@@ -6,7 +6,7 @@ const handler = async (req, res) => {
     Track
       .find({})
       .sort({ time: -1 })
-      .limit(req.body?.limit ?? 0)
+      .limit(10)
       .exec((error, data) => {
         if (error) {
           res.status(400).json({ error });
