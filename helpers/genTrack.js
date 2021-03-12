@@ -27,6 +27,7 @@ const genTrack = ({
       country: location.country,
     },
     coord,
+    hourly: [],
   };
   return newTrack;
 };
