@@ -1,7 +1,7 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable no-alert */
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 import styles from '../../styles/Modal.module.css';
 
@@ -12,8 +12,12 @@ const LocAlert = ({
 
   const onConfirm = async () => {
     await axios.post('/api/fetch-data', { city, state, country })
-      .then(() => {
-        window.location.href = '/tableview';
+      .then(async (data) => {
+        const { doc } = data.data;
+        const postObj = { id: doc._id, coord: doc.coord };
+        await axios.post('/api/hourly', postObj);
+        onHide();
+        window.location.reload();
       });
   };
 
@@ -47,7 +51,7 @@ const LocAlert = ({
         </h3>
         <br />
         <br />
-        <Button type="submit" variant="form" onClick={onConfirm}>Confirm</Button>
+        <Button variant="form" onClick={onConfirm}>Confirm</Button>
         <Button
           variant="cancel"
           onClick={onHide}
@@ -57,7 +61,7 @@ const LocAlert = ({
         </Button>
       </Modal.Body>
     </Modal>
-  )
+  );
 };
 
 export default LocAlert;
